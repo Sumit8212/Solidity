@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "cars",
+				"outputs": [
+					{
+						"internalType": "contract Car",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Oops/class_object.sol": "CarFactory"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Oops/class_object.sol": {
+			"keccak256": "0x0280f7145db438a741169190f937eef32403f8b1fa6048dfc4eabe2745a18129",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9e470b1ca64926af4c2578da90f175cf5705d075d187e9189b16f0fd6944b0e9",
+				"dweb:/ipfs/QmQL8QxQCaNb9NcXEwtNwftHhWfXKFEVrmmLcyvceMqbfG"
+			]
+		}
+	},
+	"version": 1
+}
