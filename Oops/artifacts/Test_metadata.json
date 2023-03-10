@@ -1,0 +1,93 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "course",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "student",
+						"type": "string"
+					}
+				],
+				"name": "getGrade",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "course",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "student",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "grade",
+						"type": "uint256"
+					}
+				],
+				"name": "setGrade",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Oops/nested_mapping.sol": "test"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Oops/nested_mapping.sol": {
+			"keccak256": "0xb3d6895f3cb05ddd17e162e3ca131046334b3c4a7d10a4a8ca4929a799bd58cf",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a0a930f106080ba306090ea8138a662c24d5330229457ebcca91ecf68b5620da",
+				"dweb:/ipfs/QmemguVPwGpQzijBmoULQ5udifxT4YM7eXYmH5ReKAaAY9"
+			]
+		}
+	},
+	"version": 1
+}

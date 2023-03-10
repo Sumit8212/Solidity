@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_para",
+						"type": "uint256"
+					}
+				],
+				"name": "myFunction",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Oops/interface.sol": "MyInterface"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Oops/interface.sol": {
+			"keccak256": "0xe43baab2850583f2d5001970279965537610f28f1a41b6f9a968b9e27a4dcbdd",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4ec141f158a24b6a5b733a4e54b68016e1e38176349abf3d8d12264276b0b6e7",
+				"dweb:/ipfs/QmXpAKXtMLpcgoBcnQnF8uY2FC1Bi5jJRUqzRdu8tHFRMg"
+			]
+		}
+	},
+	"version": 1
+}

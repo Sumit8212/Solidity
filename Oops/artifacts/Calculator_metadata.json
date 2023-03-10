@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getResult",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Oops/abstraction.sol": "Calculator"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Oops/abstraction.sol": {
+			"keccak256": "0x5171189dd18eaf524950d9973186dcb201105b4f46584c4617e10b7c5ba5d8c2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://3bc9ba8e1c0a0aaa6929f24705e84a03739d7e3e02ca5c26bab0604a226023f1",
+				"dweb:/ipfs/QmZ4JFyJ6Jsgif9Jkc3w1k71tAxKRd8JtMzBxzcuGJ4Lbq"
+			]
+		}
+	},
+	"version": 1
+}
