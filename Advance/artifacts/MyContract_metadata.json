@@ -9,38 +9,26 @@
 				"anonymous": false,
 				"inputs": [
 					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "_from",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "bytes32",
-						"name": "_id",
-						"type": "bytes32"
-					},
-					{
 						"indexed": false,
 						"internalType": "uint256",
-						"name": "_value",
+						"name": "number",
 						"type": "uint256"
 					}
 				],
-				"name": "Deposit",
+				"name": "NewNumber",
 				"type": "event"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "bytes32",
-						"name": "_id",
-						"type": "bytes32"
+						"internalType": "uint256",
+						"name": "_number",
+						"type": "uint256"
 					}
 				],
-				"name": "deposit",
+				"name": "setNumber",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -57,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Advance/event.sol": "Test"
+			"Advance/event.sol": "MyContract"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -72,11 +60,11 @@
 	},
 	"sources": {
 		"Advance/event.sol": {
-			"keccak256": "0x39b5acb285e826545feccc0acb073dcdaa4f98545e85ef236a355a0c9ffe11c4",
+			"keccak256": "0x7ba12444612b72232d4fa1b1bb48ece3c510ea9a082f2ef2c66da99c4fd1798d",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://39635129a5800ce9ba0787240dd37f9857dbfbab02ea5636dbc69792f5b383ad",
-				"dweb:/ipfs/QmXSzzdJ9RQxN5JFxjZYGEW1eyxkUR3qKQtPVAwqC7RSsf"
+				"bzz-raw://6c41004d1bcc96b152c6e452c3130e77bfb74df947f61cdfcace03d17eabbb18",
+				"dweb:/ipfs/QmewSooRJadodyrTLiwxswgS9BM7SQgedhXxDTV7MkyB3v"
 			]
 		}
 	},
