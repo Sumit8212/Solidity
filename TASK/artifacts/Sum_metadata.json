@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "num2",
+						"type": "uint256"
+					}
+				],
+				"name": "sum",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TASK/SumOfTwoNum.sol": "Sum"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TASK/SumOfTwoNum.sol": {
+			"keccak256": "0x7fbb096feb49e31bd00f79bb8cd2df52ed9fa97aab2ad0c354412d2c0f844e59",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7caa7ff8b815fd6f51214d77e1f3da9e540366a7c52c9e2e92a25be6451baa9b",
+				"dweb:/ipfs/Qmeewbv1y8uZQUHsCSBXUFiK7Q2sitk9av44QSB2cTogcZ"
+			]
+		}
+	},
+	"version": 1
+}
