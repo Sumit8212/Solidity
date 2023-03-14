@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_modulus",
+						"type": "uint256"
+					}
+				],
+				"name": "randMod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TASK/Random_num.sol": "Random_num"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TASK/Random_num.sol": {
+			"keccak256": "0x639ebff347d31c64b6ee2665355680842c39594ff4f4f0229eff0ab398c7a025",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://720ea790992ee67f4c6757ca2a4d4bba521e1b4c986d51de4518d189d96df193",
+				"dweb:/ipfs/QmaNjtZ2apjwS2dcXhvC7LuScHSdWbBMQVxqDyYcNDSSJJ"
+			]
+		}
+	},
+	"version": 1
+}
