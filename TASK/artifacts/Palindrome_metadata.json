@@ -6,16 +6,22 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "randMod",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "str",
+						"type": "string"
 					}
 				],
-				"stateMutability": "view",
+				"name": "checkPalindrome",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -32,7 +38,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"TASK/Random_num.sol": "Random_num"
+			"TASK/string_palindrome.sol": "Palindrome"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -46,12 +52,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"TASK/Random_num.sol": {
-			"keccak256": "0x397687751c81f4e16b5f84b2ce96a4e1e20dcc5ac0c7c40818cab168737125e9",
+		"TASK/string_palindrome.sol": {
+			"keccak256": "0xe6097ba8bdc09e1120f3bece063b1b1464c834392e356562b939765151567a19",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://16bad1851a65ba01a526219196b4e02f7f5e51ab2b8bf91d390ca3a5516156d5",
-				"dweb:/ipfs/QmQC1Su1pJTkKYF9UTGjNcuJMmKkjBogYz8crszD1dVVBk"
+				"bzz-raw://1fcd7138259ea4d40f15d1311cd54a6fe0f67c0afbece45ebb1949c246996ced",
+				"dweb:/ipfs/QmNgVeeC3925QsF4WSGi56ZCfVyqVUZi772Asy7XZHJMdd"
 			]
 		}
 	},

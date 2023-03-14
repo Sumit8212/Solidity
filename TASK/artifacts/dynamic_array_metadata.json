@@ -54,13 +54,13 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "valueRemove",
+						"name": "element",
 						"type": "uint256"
 					}
 				],
 				"name": "removeByValue",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -92,11 +92,11 @@
 	},
 	"sources": {
 		"TASK/Dynamic_Array.sol": {
-			"keccak256": "0xaf17cc7e5955c9f91a6acc73dfb7c6fa48c3c5b894be84554f34818be2f4777c",
+			"keccak256": "0xaef19b9aa5739b3faecd6dfdaf01f43bee307387283d6aab9d9152b8d3c7b052",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ab595b10993184cb05da3aead8b7b6e1a804caeb1ccabd5ac7e3c892cd5c3b4d",
-				"dweb:/ipfs/QmVWyxEshxJCovMunzXNE26s6SBFiBuGydq3NthNpmKL9U"
+				"bzz-raw://13cb02ce98e6d6fc442edd59d538e0e1af62e973358c06e31cc89b9ee0b0a6cd",
+				"dweb:/ipfs/QmVizrz4AdemyFhhWGXoSkeaKXuW9cAdw8gLk4YUKpAHZZ"
 			]
 		}
 	},
