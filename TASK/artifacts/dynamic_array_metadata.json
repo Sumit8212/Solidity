@@ -60,7 +60,7 @@
 				],
 				"name": "removeByValue",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			}
 		],
@@ -92,11 +92,11 @@
 	},
 	"sources": {
 		"TASK/Dynamic_Array.sol": {
-			"keccak256": "0x075f768e348c93e0866a61fc3da2af155b6aa5eef1f228b61f28b9cb7736afd2",
+			"keccak256": "0xff59d25d054d8093f3cca30cee527cadb27f4362f9bc04705a4c6e1b5273354a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://55f30e918f0bc89d8a754225db20fec6d742033f20ec53041484c4b492bdbf90",
-				"dweb:/ipfs/QmdcdijnDfstex3SuLDE1P8tYkebnvzxQHWCqPm5oQtKib"
+				"bzz-raw://c04ad7c676a6b385d5e541b364e238e6de0d021190edade209d8c22574721dce",
+				"dweb:/ipfs/QmbDRPhDsMe7RYthCkK7s1mG5RPBkgGvUhZsi9nFZQUhve"
 			]
 		}
 	},

@@ -13,7 +13,8 @@ contract dynamic_array{
    function remove(uint index) public{
     delete arr[index];
   }
-  function removeByValue(uint valueRemove)public{
+  function removeByValue(uint valueRemove)public payable{
+      require(arr.length>0,"invalid");
       for(uint i=0; i<arr.length; i++){
           if(arr[i]==valueRemove){
               delete arr[i];

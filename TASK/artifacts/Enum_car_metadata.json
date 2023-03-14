@@ -1,0 +1,73 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "ignitionState",
+				"outputs": [
+					{
+						"internalType": "enum Enum_car.car",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ignition_Off",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "ignition_On",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"TASK/enum_car.sol": "Enum_car"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"TASK/enum_car.sol": {
+			"keccak256": "0xfd8cf6afc3a85dc1cee1708e91f3ba97ef840d76ca530c19459a6784ca7b2b29",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://a9df66896d3a958e6daddf1bb78df398fbb04b99e4c66251b0696077a8cf87ee",
+				"dweb:/ipfs/QmX9bbnHMGtoyqrYcdBQPEBw5PkdswstKHjU6Nsnqg8mcW"
+			]
+		}
+	},
+	"version": 1
+}
