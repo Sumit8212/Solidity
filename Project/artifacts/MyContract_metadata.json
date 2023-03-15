@@ -11,45 +11,17 @@
 				"type": "constructor"
 			},
 			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": false,
-						"internalType": "address",
-						"name": "accountAddress",
-						"type": "address"
-					},
-					{
-						"indexed": false,
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "LogDepositMade",
-				"type": "event"
-			},
-			{
-				"inputs": [],
-				"name": "deposit",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
 				"stateMutability": "payable",
-				"type": "function"
+				"type": "fallback"
 			},
 			{
 				"inputs": [],
-				"name": "owner",
+				"name": "getContractBalance",
 				"outputs": [
 					{
-						"internalType": "address",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -94,6 +66,10 @@
 				"outputs": [],
 				"stateMutability": "payable",
 				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -124,11 +100,11 @@
 	},
 	"sources": {
 		"Project/banking.sol": {
-			"keccak256": "0xbdbbcc5ee977abd18da5b636f2ac7d2ae46e266d6a101109564e3237175a3165",
+			"keccak256": "0x5b6602416c02fd0100f08d2d7737f0833874e0f9bc689424ad1f0652f16b7a7e",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://68684a053a033f0d5c238eb99313d17fe28047bfe521dede6bbc4ffb5eab7529",
-				"dweb:/ipfs/QmeTSrYofskXHZPfp3BfJNsNKg8RwwBGYcajVdvgrDxnvx"
+				"bzz-raw://ba45c25eda7e54f2c8ceddd77f068d5a1de0e523f2ada028c7da7757d7c4a1d0",
+				"dweb:/ipfs/QmeEcTpPgXLF8xAr2gGiLo28j6TrXLzya6szfCTvvjYomM"
 			]
 		}
 	},
