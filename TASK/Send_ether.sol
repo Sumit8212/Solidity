@@ -5,11 +5,9 @@ pragma solidity >=0.8.2 <0.9.0;
 contract Send_ether {
     address admin;
 
-    constructor() public {
+    constructor() {
         admin = msg.sender;
     }
-
-    address payable otherContr;
 
     receive() external payable {}
 
@@ -25,7 +23,7 @@ contract Send_ether {
     }
 
     function getMyBalance() public view returns (uint256) {
-        return admin.balance;
+        return msg.sender.balance;
     }
 
     function withdrawContractBal() public {
