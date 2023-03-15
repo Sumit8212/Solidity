@@ -13,11 +13,12 @@ contract dynamic_array {
         delete arr[index];
     }
 
-    function removeByValue(uint256 element) public{
-        require(arr.length > 0 , "invalid");
+    function removeByValue(uint256 element) public {
+        require(arr.length > 0, "invalid");
         for (uint256 i = 0; i < arr.length; i++) {
             if (arr[i] == element) {
-                delete arr[i];                
+                require(arr[i] == element, "element not found");
+                delete arr[i];
             }
         }
     }
