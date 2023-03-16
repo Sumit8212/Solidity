@@ -15,22 +15,55 @@
 				"type": "fallback"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "month",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_input",
+						"type": "string"
+					}
+				],
+				"name": "Loan",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
-				"name": "getContractBalance",
-				"outputs": [
+				"name": "addFund",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "u1",
+				"name": "allUser",
 				"outputs": [
+					{
+						"internalType": "address",
+						"name": "user_id",
+						"type": "address"
+					},
 					{
 						"internalType": "string",
 						"name": "name",
@@ -61,10 +94,198 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "withdraw",
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "deposit",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getContractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "user_id",
+						"type": "address"
+					}
+				],
+				"name": "getUser",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "user_id",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "balance",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "loan",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "emi",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "timeperiod",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct MyContract.user",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "payEmi",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "u1",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "user_id",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "loan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "emi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeperiod",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "user_id",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "loan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "emi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timeperiod",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -100,11 +321,19 @@
 	},
 	"sources": {
 		"Project/banking.sol": {
-			"keccak256": "0x5b6602416c02fd0100f08d2d7737f0833874e0f9bc689424ad1f0652f16b7a7e",
+			"keccak256": "0xb2ac3b0f0f42ea6c47af52618b6b9cdc87b70ae7420abc82c96bac7a26265e22",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ba45c25eda7e54f2c8ceddd77f068d5a1de0e523f2ada028c7da7757d7c4a1d0",
-				"dweb:/ipfs/QmeEcTpPgXLF8xAr2gGiLo28j6TrXLzya6szfCTvvjYomM"
+				"bzz-raw://56b75a1e51afc3d45effdd293870863d022320adc3f981689a250560f9aedaa9",
+				"dweb:/ipfs/QmVBcogEJqxSoioq8a3BoPbpNy9ibxWzN3CmF6zuBAHzj8"
+			]
+		},
+		"solidity-string-utils/StringUtils.sol": {
+			"keccak256": "0x1460ed4b6cda25294a4829fbd48ba92ecab082f6a41f8464380e8afa7c376bb3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3df810df7b305d4b9a4aeeeb1940c66919070d9eb1c0773b6040ade820cacff8",
+				"dweb:/ipfs/QmaWmMfoZCQzADQrZpb39gt56fHvXG55jwHgGYJnDDMW5X"
 			]
 		}
 	},

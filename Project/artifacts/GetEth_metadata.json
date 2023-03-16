@@ -1,0 +1,63 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getContractBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Project/banking.sol": "GetEth"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Project/banking.sol": {
+			"keccak256": "0x58d0ee4326b19f1e3159b8bdf5c0b555b943250844e2fc6fa2dc5e89230d53ce",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9af7dd167cc319f20bd6ff52282965cea942d56426b1b5053aca53f4c44a207a",
+				"dweb:/ipfs/QmS17ZW2nTMPCMCn1z5gt3W9Af4sinjcQiTEPwWSpbRtZ3"
+			]
+		}
+	},
+	"version": 1
+}
