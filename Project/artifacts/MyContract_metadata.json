@@ -52,41 +52,26 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "carLoanDetails",
+				"outputs": [
+					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"name": "allUser",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "user_id",
-						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
 					},
 					{
 						"internalType": "uint256",
-						"name": "balance",
+						"name": "",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "loan",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "emi",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timeperiod",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -128,48 +113,26 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "user_id",
+						"name": "account",
 						"type": "address"
 					}
 				],
-				"name": "getUser",
+				"name": "homeLoanDetails",
 				"outputs": [
 					{
-						"components": [
-							{
-								"internalType": "address",
-								"name": "user_id",
-								"type": "address"
-							},
-							{
-								"internalType": "string",
-								"name": "name",
-								"type": "string"
-							},
-							{
-								"internalType": "uint256",
-								"name": "balance",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "loan",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "emi",
-								"type": "uint256"
-							},
-							{
-								"internalType": "uint256",
-								"name": "timeperiod",
-								"type": "uint256"
-							}
-						],
-						"internalType": "struct MyContract.user",
+						"internalType": "uint256",
 						"name": "",
-						"type": "tuple"
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -189,37 +152,28 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "u1",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "address",
-						"name": "user_id",
+						"name": "account",
 						"type": "address"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
+					}
+				],
+				"name": "personalLoanDetails",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "balance",
+						"name": "",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "loan",
+						"name": "",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "emi",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timeperiod",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -242,11 +196,6 @@
 						"type": "address"
 					},
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
 						"internalType": "uint256",
 						"name": "balance",
 						"type": "uint256"
@@ -264,6 +213,26 @@
 					{
 						"internalType": "uint256",
 						"name": "timeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "carLoan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeLoan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "personalLoan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "carEmi",
 						"type": "uint256"
 					}
 				],
@@ -321,11 +290,11 @@
 	},
 	"sources": {
 		"Project/banking.sol": {
-			"keccak256": "0xb2ac3b0f0f42ea6c47af52618b6b9cdc87b70ae7420abc82c96bac7a26265e22",
+			"keccak256": "0x6e5240f603175321faa98eccdcc518a120507429b7c9cf73a7c47e52ab8d9387",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://56b75a1e51afc3d45effdd293870863d022320adc3f981689a250560f9aedaa9",
-				"dweb:/ipfs/QmVBcogEJqxSoioq8a3BoPbpNy9ibxWzN3CmF6zuBAHzj8"
+				"bzz-raw://98f7e919cd2139ea6ffdab75a1340832f61b539ab46fdee90852cb39e8f4b3cc",
+				"dweb:/ipfs/QmWjouH9RKgvJpZqg9f5nsg1iWeT5gNPjk1c4MihvcS4W2"
 			]
 		},
 		"solidity-string-utils/StringUtils.sol": {
