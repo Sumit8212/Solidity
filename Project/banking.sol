@@ -4,9 +4,7 @@ pragma solidity >=0.8.2 <0.9.0;
 contract MyContract {
     struct user {
         address user_id;
-        // string name;
         uint256 balance;
-        uint256 timeperiod;
         uint256 carLoan;
         uint256 homeLoan;
         uint256 personalLoan;
@@ -16,11 +14,15 @@ contract MyContract {
         uint256 carLoanTimeperiod;
         uint256 homeLoanTimeperiod;
         uint256 personalLoanTimeperiod;
+        uint256 timestamp;
+    }
+    user public u1;
+
+    function setTime() internal {
+        u1.timestamp = block.timestamp;
     }
 
     address admin;
-
-    // user public u1;
 
     receive() external payable {}
 
@@ -49,7 +51,6 @@ contract MyContract {
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
@@ -58,7 +59,8 @@ contract MyContract {
             users[account].personalLoanEmi,
             users[account].carLoanTimeperiod,
             users[account].homeLoanTimeperiod,
-            users[account].personalLoanTimeperiod
+            users[account].personalLoanTimeperiod,
+            users[account].timestamp
         );
     }
 
@@ -95,7 +97,7 @@ contract MyContract {
             users[account].carLoan = amount + carSI;
             users[account].carEmi = users[account].carLoan / month;
             users[account].carLoanTimeperiod += month;
-            users[account].carLoan += amount + carSI;
+            // users[account].carLoan += amount + carSI;
         } else if (
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("home"))
@@ -109,7 +111,7 @@ contract MyContract {
             users[account].homeLoan = finalAmountHome;
             users[account].homeEmi = users[account].homeLoan / month;
             users[account].homeLoanTimeperiod += month;
-            users[account].homeLoan += amount + homeSI;
+            // users[account].homeLoan += amount + homeSI;
         } else if (
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("personal"))
@@ -125,13 +127,12 @@ contract MyContract {
                 users[account].personalLoan /
                 month;
             users[account].personalLoanTimeperiod += month;
-            users[account].personalLoan += amount + personalSI;
+            // users[account].personalLoan += amount + personalSI;
         }
 
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
@@ -140,7 +141,8 @@ contract MyContract {
             users[account].personalLoanEmi,
             users[account].carLoanTimeperiod,
             users[account].homeLoanTimeperiod,
-            users[account].personalLoanTimeperiod
+            users[account].personalLoanTimeperiod,
+            users[account].timestamp
         );
     }
 
@@ -155,7 +157,6 @@ contract MyContract {
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
@@ -164,7 +165,8 @@ contract MyContract {
             users[account].personalLoanEmi,
             users[account].carLoanTimeperiod,
             users[account].homeLoanTimeperiod,
-            users[account].personalLoanTimeperiod
+            users[account].personalLoanTimeperiod,
+            users[account].timestamp
         );
     }
 
@@ -183,8 +185,12 @@ contract MyContract {
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("car"))
         ) {
+            require(
+                block.timestamp - users[account].timestamp > 30 days,
+                "Need to wait 1 month after paying last EMI"
+            );
+            users[account].timestamp = block.timestamp;
             require(users[account].carLoanTimeperiod > 0, "invalid emi amount");
-            // account.transfer(users[account].carEmi);
             users[account].balance -= users[account].carEmi;
             users[account].carLoan -= users[account].carEmi;
             users[account].carLoanTimeperiod--;
@@ -192,7 +198,11 @@ contract MyContract {
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("home"))
         ) {
-            // account.transfer(users[account].homeEmi);
+            require(
+                block.timestamp - users[account].timestamp > 30 days,
+                "Need to wait 1 month after paying last EMI"
+            );
+            users[account].timestamp = block.timestamp;
             require(
                 users[account].homeLoanTimeperiod > 0,
                 "invalid emi amount"
@@ -204,7 +214,11 @@ contract MyContract {
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("personal"))
         ) {
-            // account.transfer(users[account].personalLoanEmi);
+            require(
+                block.timestamp - users[account].timestamp > 30 days,
+                "Need to wait 1 month after paying last EMI"
+            );
+            users[account].timestamp = block.timestamp;
             require(
                 users[account].personalLoanTimeperiod > 0,
                 "invalid emi amount"
@@ -217,7 +231,6 @@ contract MyContract {
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
@@ -226,7 +239,8 @@ contract MyContract {
             users[account].personalLoanEmi,
             users[account].carLoanTimeperiod,
             users[account].homeLoanTimeperiod,
-            users[account].personalLoanTimeperiod
+            users[account].personalLoanTimeperiod,
+            users[account].timestamp
         );
     }
 
@@ -238,9 +252,9 @@ contract MyContract {
         public
         view
         returns (
-            uint256,
-            uint256,
-            uint256
+            uint256 loanAmount,
+            uint256 montlyEmi,
+            uint256 timeperiod
         )
     {
         require(account != address(0), "zero address is not allowed");
@@ -255,9 +269,9 @@ contract MyContract {
         public
         view
         returns (
-            uint256,
-            uint256,
-            uint256
+            uint256 loanAmount,
+            uint256 montlyEmi,
+            uint256 timeperiod
         )
     {
         require(account != address(0), "zero address is not allowed");
@@ -272,9 +286,9 @@ contract MyContract {
         public
         view
         returns (
-            uint256,
-            uint256,
-            uint256
+            uint256 loanAmount,
+            uint256 montlyEmi,
+            uint256 timeperiod
         )
     {
         require(account != address(0), "zero address is not allowed");

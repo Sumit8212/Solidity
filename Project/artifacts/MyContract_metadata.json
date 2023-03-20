@@ -61,17 +61,17 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "loanAmount",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "montlyEmi",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "timeperiod",
 						"type": "uint256"
 					}
 				],
@@ -121,17 +121,17 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "loanAmount",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "montlyEmi",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "timeperiod",
 						"type": "uint256"
 					}
 				],
@@ -168,17 +168,17 @@
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "loanAmount",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "montlyEmi",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "timeperiod",
 						"type": "uint256"
 					}
 				],
@@ -186,14 +186,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "users",
+				"inputs": [],
+				"name": "u1",
 				"outputs": [
 					{
 						"internalType": "address",
@@ -203,11 +197,6 @@
 					{
 						"internalType": "uint256",
 						"name": "balance",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "timeperiod",
 						"type": "uint256"
 					},
 					{
@@ -253,6 +242,85 @@
 					{
 						"internalType": "uint256",
 						"name": "personalLoanTimeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "user_id",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "carLoan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeLoan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "personalLoan",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "carEmi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeEmi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "personalLoanEmi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "carLoanTimeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeLoanTimeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "personalLoanTimeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "timestamp",
 						"type": "uint256"
 					}
 				],
@@ -310,11 +378,11 @@
 	},
 	"sources": {
 		"Project/banking.sol": {
-			"keccak256": "0x279c0cc27c25b241005b2e89309b5f191ce9932cbf69adf4c1c2ec5939a1425a",
+			"keccak256": "0x9cf218d65a9567c1596c47edd268e2f28dc4738443a793d13f8df712f7449601",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://2d9c2e7539813da23512f1b5788675d760144217cda1084625a2c1d057e15ff4",
-				"dweb:/ipfs/QmVxMTtgsF9oUpHxnJx2t2SqBZujgm5SUCftTnCaH9jmKz"
+				"bzz-raw://8a9ad261ca81b7c0b9bc719afa306d89924495b406a3b70359fc727a5b3c3352",
+				"dweb:/ipfs/QmWafWF4EircaUn5uS8uzy6U5bDgK27TU5GCTk2hQFfYPj"
 			]
 		}
 	},
