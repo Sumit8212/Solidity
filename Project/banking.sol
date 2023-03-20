@@ -1,19 +1,21 @@
 // SPDX-License-Identifier: GPL-3.0
 pragma solidity >=0.8.2 <0.9.0;
-import "solidity-string-utils/StringUtils.sol";
 
 contract MyContract {
     struct user {
         address user_id;
         // string name;
         uint256 balance;
-        uint256 loan;
-        uint256 emi;
         uint256 timeperiod;
         uint256 carLoan;
         uint256 homeLoan;
         uint256 personalLoan;
         uint256 carEmi;
+        uint256 homeEmi;
+        uint256 personalLoanEmi;
+        uint256 carLoanTimeperiod;
+        uint256 homeLoanTimeperiod;
+        uint256 personalLoanTimeperiod;
     }
 
     address admin;
@@ -41,17 +43,22 @@ contract MyContract {
     mapping(address => user) public users;
 
     function deposit(address payable account, uint256 amount) public payable {
+        require(account != address(0), "zero address is not allowed");
+        require(amount != 0, "please send some amount");
         users[account].balance += amount;
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].loan,
-            users[account].emi,
             users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
-            users[account].carEmi
+            users[account].carEmi,
+            users[account].homeEmi,
+            users[account].personalLoanEmi,
+            users[account].carLoanTimeperiod,
+            users[account].homeLoanTimeperiod,
+            users[account].personalLoanTimeperiod
         );
     }
 
@@ -61,6 +68,8 @@ contract MyContract {
         uint256 month,
         string memory _input
     ) public payable {
+        require(account != address(0), "zero address is not allowed");
+        require(amount != 0, "please send some amount");
         account.transfer(amount);
         users[account].balance += amount;
         // uint carSI;
@@ -85,8 +94,8 @@ contract MyContract {
             uint256 carSI = (amount * 8 * month) / 1200;
             users[account].carLoan = amount + carSI;
             users[account].carEmi = users[account].carLoan / month;
-            users[account].timeperiod += month;
-            users[account].loan += amount + carSI;
+            users[account].carLoanTimeperiod += month;
+            users[account].carLoan += amount + carSI;
         } else if (
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("home"))
@@ -98,9 +107,9 @@ contract MyContract {
             uint256 homeSI = (amount * 6 * month) / 1200;
             uint256 finalAmountHome = amount + homeSI;
             users[account].homeLoan = finalAmountHome;
-            users[account].emi = users[account].homeLoan / month;
-            users[account].timeperiod += month;
-            users[account].loan += amount + homeSI;
+            users[account].homeEmi = users[account].homeLoan / month;
+            users[account].homeLoanTimeperiod += month;
+            users[account].homeLoan += amount + homeSI;
         } else if (
             keccak256(abi.encodePacked(_input)) ==
             keccak256(abi.encodePacked("personal"))
@@ -112,101 +121,112 @@ contract MyContract {
             uint256 personalSI = (amount * 10 * month) / 1200;
             uint256 finalAmountPersonal = amount + personalSI;
             users[account].personalLoan = finalAmountPersonal;
-            users[account].emi = users[account].personalLoan / month;
-            users[account].timeperiod += month;
-            users[account].loan += amount + personalSI;
+            users[account].personalLoanEmi =
+                users[account].personalLoan /
+                month;
+            users[account].personalLoanTimeperiod += month;
+            users[account].personalLoan += amount + personalSI;
         }
 
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].loan,
-            users[account].emi,
             users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
-            users[account].carEmi
+            users[account].carEmi,
+            users[account].homeEmi,
+            users[account].personalLoanEmi,
+            users[account].carLoanTimeperiod,
+            users[account].homeLoanTimeperiod,
+            users[account].personalLoanTimeperiod
         );
     }
-
-    //  function homeLoan(
-    //     address payable account,
-    //     uint256 amount,
-    //     uint256 month,string memory _input
-    // ) public payable {
-    //     account.transfer(amount);
-    //     u1.balance += amount;
-    //     u1.timeperiod += month;
-    //     require(keccak256(abi.encodePacked(_input)) == keccak256(abi.encodePacked("car")));
-    //     uint si = (amount*8*month)/1200;
-    //     uint finalAmount=amount+si;
-    //     u1.loan=finalAmount;
-    //     u1.emi=u1.loan/month;
-    //     users[account] = user(u1.user_id,u1.name,u1.balance,u1.loan,u1.emi,u1.timeperiod);
-    // }
-
-    //  function personalLoan(
-    //     address payable account,
-    //     uint256 amount,
-    //     uint256 month,string memory _input
-    // ) public payable {
-    //     account.transfer(amount);
-    //     u1.balance += amount;
-    //     u1.timeperiod += month;
-    //     require(keccak256(abi.encodePacked(_input)) == keccak256(abi.encodePacked("car")));
-    //     uint si = (amount*8*month)/1200;
-    //     uint finalAmount=amount+si;
-    //     u1.loan=finalAmount;
-    //     u1.emi=u1.loan/month;
-    //     users[account] = user(u1.user_id,u1.name,u1.balance,u1.loan,u1.emi,u1.timeperiod);
-    // }
 
     function withdraw(address payable account, uint256 amount) public {
         require(
             amount > 0 && amount < users[account].balance,
             "invalid amount"
         );
+        require(account != address(0), "zero address is not allowed");
+        require(amount != 0, "please send some amount");
         users[account].balance -= amount;
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].loan,
-            users[account].emi,
             users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
-            users[account].carEmi
+            users[account].carEmi,
+            users[account].homeEmi,
+            users[account].personalLoanEmi,
+            users[account].carLoanTimeperiod,
+            users[account].homeLoanTimeperiod,
+            users[account].personalLoanTimeperiod
         );
     }
 
-    // function showLoanDetails(string memory loanType)public{
-    //     require(keccak256(abi.encodePacked(_input)) == keccak256(abi.encodePacked("car")) || keccak256(abi.encodePacked(_input)) == keccak256(abi.encodePacked("home")) || keccak256(abi.encodePacked(_input)) == keccak256(abi.encodePacked("personal")), "invalid loan type");
-    //     if(keccak256(abi.encodePacked(_input)) == keccak256(abi.encodePacked("car")){
+    function payEmi(address payable account, string memory _input) public {
+        require(
+            keccak256(abi.encodePacked(_input)) ==
+                keccak256(abi.encodePacked("car")) ||
+                keccak256(abi.encodePacked(_input)) ==
+                keccak256(abi.encodePacked("home")) ||
+                keccak256(abi.encodePacked(_input)) ==
+                keccak256(abi.encodePacked("personal")),
+            "invalid loan type"
+        );
+        require(account != address(0), "zero address is not allowed");
+        if (
+            keccak256(abi.encodePacked(_input)) ==
+            keccak256(abi.encodePacked("car"))
+        ) {
+            require(users[account].carLoanTimeperiod > 0, "invalid emi amount");
+            // account.transfer(users[account].carEmi);
+            users[account].balance -= users[account].carEmi;
+            users[account].carLoan -= users[account].carEmi;
+            users[account].carLoanTimeperiod--;
+        } else if (
+            keccak256(abi.encodePacked(_input)) ==
+            keccak256(abi.encodePacked("home"))
+        ) {
+            // account.transfer(users[account].homeEmi);
+            require(
+                users[account].homeLoanTimeperiod > 0,
+                "invalid emi amount"
+            );
+            users[account].balance -= users[account].homeEmi;
+            users[account].homeLoan -= users[account].homeEmi;
+            users[account].homeLoanTimeperiod--;
+        } else if (
+            keccak256(abi.encodePacked(_input)) ==
+            keccak256(abi.encodePacked("personal"))
+        ) {
+            // account.transfer(users[account].personalLoanEmi);
+            require(
+                users[account].personalLoanTimeperiod > 0,
+                "invalid emi amount"
+            );
+            users[account].balance -= users[account].personalLoanEmi;
+            users[account].personalLoan -= users[account].personalLoanEmi;
+            users[account].personalLoanTimeperiod--;
+        }
 
-    //     }
-    // }
-
-    function payEmi(address payable account) public {
-        // require(
-        //     users[account].timeperiod > 0 && users[account].balance > 0,
-        //     "EMI NOT PAID"
-        // );
-        account.transfer(address(this).balance);
-        users[account].balance -= users[account].carEmi;
-        users[account].carLoan -= users[account].carEmi;
-        users[account].timeperiod--;
         users[account] = user(
             users[account].user_id,
             users[account].balance,
-            users[account].loan,
-            users[account].emi,
             users[account].timeperiod,
             users[account].carLoan,
             users[account].homeLoan,
             users[account].personalLoan,
-            users[account].carEmi
+            users[account].carEmi,
+            users[account].homeEmi,
+            users[account].personalLoanEmi,
+            users[account].carLoanTimeperiod,
+            users[account].homeLoanTimeperiod,
+            users[account].personalLoanTimeperiod
         );
     }
 
@@ -214,17 +234,54 @@ contract MyContract {
         return address(this).balance;
     }
 
-    // function getUser(address user_id) public view returns (user memory) {
-    //     return users[user_id];
-    // }
+    function carLoanDetails(address account)
+        public
+        view
+        returns (
+            uint256,
+            uint256,
+            uint256
+        )
+    {
+        require(account != address(0), "zero address is not allowed");
+        return (
+            users[account].carLoan,
+            users[account].carEmi,
+            users[account].carLoanTimeperiod
+        );
+    }
 
-    function carLoanDetails(address account) public view returns(uint,uint,uint){
-        return (users[account].carLoan,users[account].carEmi,users[account].timeperiod);
+    function homeLoanDetails(address account)
+        public
+        view
+        returns (
+            uint256,
+            uint256,
+            uint256
+        )
+    {
+        require(account != address(0), "zero address is not allowed");
+        return (
+            users[account].homeLoan,
+            users[account].homeEmi,
+            users[account].homeLoanTimeperiod
+        );
     }
-     function homeLoanDetails(address account) public view returns(uint,uint,uint){
-        return (users[account].homeLoan,users[account].carEmi,users[account].timeperiod);
-    }
-     function personalLoanDetails(address account) public view returns(uint,uint,uint){
-        return (users[account].personalLoan,users[account].carEmi,users[account].timeperiod);
+
+    function personalLoanDetails(address account)
+        public
+        view
+        returns (
+            uint256,
+            uint256,
+            uint256
+        )
+    {
+        require(account != address(0), "zero address is not allowed");
+        return (
+            users[account].personalLoan,
+            users[account].personalLoanEmi,
+            users[account].personalLoanTimeperiod
+        );
     }
 }

@@ -144,6 +144,11 @@
 						"internalType": "address payable",
 						"name": "account",
 						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_input",
+						"type": "string"
 					}
 				],
 				"name": "payEmi",
@@ -202,16 +207,6 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "loan",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "emi",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
 						"name": "timeperiod",
 						"type": "uint256"
 					},
@@ -233,6 +228,31 @@
 					{
 						"internalType": "uint256",
 						"name": "carEmi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeEmi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "personalLoanEmi",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "carLoanTimeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "homeLoanTimeperiod",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "personalLoanTimeperiod",
 						"type": "uint256"
 					}
 				],
@@ -290,19 +310,11 @@
 	},
 	"sources": {
 		"Project/banking.sol": {
-			"keccak256": "0x6e5240f603175321faa98eccdcc518a120507429b7c9cf73a7c47e52ab8d9387",
+			"keccak256": "0x279c0cc27c25b241005b2e89309b5f191ce9932cbf69adf4c1c2ec5939a1425a",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://98f7e919cd2139ea6ffdab75a1340832f61b539ab46fdee90852cb39e8f4b3cc",
-				"dweb:/ipfs/QmWjouH9RKgvJpZqg9f5nsg1iWeT5gNPjk1c4MihvcS4W2"
-			]
-		},
-		"solidity-string-utils/StringUtils.sol": {
-			"keccak256": "0x1460ed4b6cda25294a4829fbd48ba92ecab082f6a41f8464380e8afa7c376bb3",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://3df810df7b305d4b9a4aeeeb1940c66919070d9eb1c0773b6040ade820cacff8",
-				"dweb:/ipfs/QmaWmMfoZCQzADQrZpb39gt56fHvXG55jwHgGYJnDDMW5X"
+				"bzz-raw://2d9c2e7539813da23512f1b5788675d760144217cda1084625a2c1d057e15ff4",
+				"dweb:/ipfs/QmVxMTtgsF9oUpHxnJx2t2SqBZujgm5SUCftTnCaH9jmKz"
 			]
 		}
 	},
