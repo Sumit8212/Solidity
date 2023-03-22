@@ -429,7 +429,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"ERC/ERCToken721.sol": "GameItem"
+			"ERC/ERC721.sol": "GameItem"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -539,7 +539,7 @@
 				"dweb:/ipfs/Qmct36zWXv3j7LZB83uwbg7TXwnZSN1fqHNDZ93GG98bGz"
 			]
 		},
-		"ERC/ERCToken721.sol": {
+		"ERC/ERC721.sol": {
 			"keccak256": "0xf7fd653c94a3b2b1081ea31ee8594c0a0bc0158c92e340f9f1001bd30b4f4cc0",
 			"license": "MIT",
 			"urls": [
