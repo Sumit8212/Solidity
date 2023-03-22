@@ -378,11 +378,11 @@
 	},
 	"sources": {
 		"Project/banking.sol": {
-			"keccak256": "0x9cf218d65a9567c1596c47edd268e2f28dc4738443a793d13f8df712f7449601",
+			"keccak256": "0xf8efcd8a2494db1f05d85d04ea633e04aa26994a624b134c3283886f6064a448",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://8a9ad261ca81b7c0b9bc719afa306d89924495b406a3b70359fc727a5b3c3352",
-				"dweb:/ipfs/QmWafWF4EircaUn5uS8uzy6U5bDgK27TU5GCTk2hQFfYPj"
+				"bzz-raw://6560483f82791c6549ec0fcd2808a76f42314a186431a95bb7da7e954e38c130",
+				"dweb:/ipfs/QmQksRSo1M1jhZradN8DNnz8gdPRBryVJHvZbWqD9WPjR7"
 			]
 		}
 	},

@@ -282,14 +282,7 @@ contract MyContract {
         );
     }
 
-    function personalLoanDetails(address account)
-        public
-        view
-        returns (
-            uint256 loanAmount,
-            uint256 montlyEmi,
-            uint256 timeperiod
-        )
+    function personalLoanDetails(address account)public view returns (uint256 loanAmount,uint256 montlyEmi,uint256 timeperiod)
     {
         require(account != address(0), "zero address is not allowed");
         return (
