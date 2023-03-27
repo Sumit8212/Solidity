@@ -23,6 +23,7 @@ mapping(address => mapping(address => bool)) _operatorApprovals;
         balances[account][id]+=amount;
     }
     
+    
      
 
 }

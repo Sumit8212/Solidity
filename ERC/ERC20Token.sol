@@ -20,7 +20,7 @@ contract sumoToken is ERC20Interface  {
     string public name;
     uint256 public decimals;
     uint256  _totalSupply;
-    address owner;
+    address public owner;
 
     event Approval(
         address indexed tokenowner,

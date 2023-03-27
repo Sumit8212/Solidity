@@ -115,11 +115,11 @@
 	},
 	"sources": {
 		"ERC/ERC20Token.sol": {
-			"keccak256": "0x1732f97be4055d47c36f7d013e0456c2260dd7e663fe8c27ecdfa969034a28e6",
+			"keccak256": "0x6b450c2651eed0a9143869b6e473db1e73806858d9e078172b4f70703f1b6169",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://c659671aef796234172085b517352e3ba61f1d22a3f18c61745661e6e99da21f",
-				"dweb:/ipfs/QmPqwUjh8GLKrDkXRbkhcDgtYwrdWG7A8QWickhGX3pEsx"
+				"bzz-raw://40f1a887e5286dbc567bff62b242cee207b51212b94b8ef63b5a547d1fe3a52b",
+				"dweb:/ipfs/QmdhEBPk2Y44xRbQ4z7L2zL8y3SG9CH3qHfAqFFSJYzSeS"
 			]
 		}
 	},
