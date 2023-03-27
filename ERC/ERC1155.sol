@@ -30,6 +30,11 @@ mapping(address => mapping(address => bool)) _operatorApprovals;
     }
 
 
+    function balanceOf(address _owner, uint256 _id) external view returns (uint256){
+      return balances[_owner][_id];
+    }
+
+    
      
 
 }
