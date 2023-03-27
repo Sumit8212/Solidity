@@ -24,6 +24,12 @@ mapping(address => mapping(address => bool)) _operatorApprovals;
     }
     
     
+    function burn(address account, uint256 id, uint256 amount) public onlyOwner{
+        require(balances[account][id]>=amount, "insufficient amount to burn");
+        balances[account][id]-= amount;
+    }
+
+
      
 
 }
